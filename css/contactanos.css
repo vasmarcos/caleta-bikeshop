@@ -1,0 +1,47 @@
+/*Codigo Paleta de colores
+- Amarillo: #fdd000
+- Blanco: #FFFFFF
+- Gris: #E5E5E5
+- Negro: #000000
+*/
+
+/*Selectores universal*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}*
+
+
+:root{
+    --fontTitle: #fdd000;
+    --fontColorFotter: #E5E5E5;
+}
+
+
+/*Encabezado*/
+nav{
+    background-color: #000000;
+}
+
+.titleMenu{
+    text-align: center;
+    color: var(--fontTitle);
+}
+
+
+/*Body*/
+h5{
+    text-align: center;
+}
+
+.icons{
+    height: 200px;
+}
+
+/*Pie de pagina*/
+footer{
+    background-color: #000000;
+    text-align: center;
+    color: #FFFFFF;
+}
