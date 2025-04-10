@@ -41,18 +41,28 @@ body{
 
 /*Encabezado*/
 header{
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
     background-color: #000000c9;
-    height: 50px;
     font-family: "Nunito Sans", sans-serif; 
 }
 
-header a{
+
+
+.menu-item{
     color: var(--fontTitle);
+}
+
+.btn-cuenta{
+    background-color: #feed00;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: medium;
+    color: #0d0f05;
     display: flex;
+    align-content: flex-end;
+    padding: 4px;
+    border-radius: 10px;
+
 }
 
 .slidebar {
