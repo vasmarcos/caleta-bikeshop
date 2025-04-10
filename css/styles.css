@@ -65,6 +65,7 @@ header{
 
 }
 
+/*Banneer*/
 .slidebar {
    position: relative;
    width: 100%;
@@ -76,6 +77,8 @@ header{
    height: 100%;
    object-fit: cover; 
 }
+
+/**/
 
 div a img{
     padding: 5px 0px;
@@ -98,7 +101,7 @@ nav ul li a{
 }
 
 /*Contenido*/
-h5, h6, h7{
+h4,h5, h6{
     font-family: "Nunito Sans", sans-serif;
 }
 
@@ -157,6 +160,42 @@ h5, h6, h7{
     height: 70vh;
 }
 
+/*Filtros*/
+.filters-category{
+    list-style-type: none;
+}
+
+.filters-category a{
+    font-family: "Nunito Sans", sans-serif; 
+    font-size: medium;
+    color: var(--fontColor);
+}
+
+.filters-talle{
+    font-family: "Nunito Sans", sans-serif; 
+    font-size: medium;
+    padding-left: 30px;
+}
+
+
+.filter-value{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.filter-value input{
+    margin: 5px;
+}
+
+.filter-value button{
+    border-radius:10px;
+    background-color: #feed00;
+    text-align: center;
+
+}
+
 /*Pie de pagina*/
 
 .icons{
@@ -168,6 +207,8 @@ footer{
     background-color: #000000c9;
     text-align: center;
     color: var(--fontColorFotter);
+    display: flex;
+
 }
 
 .containerFooter ul{
@@ -179,10 +220,10 @@ footer{
 .containerFooter ul li{
     list-style-type: none;
     padding: 5px 5px;
-    margin: 5px 5px;
 }
 
-.containerFooter h4{
+.containerFooter h6{
     padding-bottom: 10px;
     color: var(--fontTitle);
+    padding-left: 25px;
 }
