@@ -201,7 +201,9 @@ h4,h5, h6{
     margin: 5px;
 }
 
-
+.card-body{
+    text-align: center;
+}
 
 /*Pie de pagina*/
 
