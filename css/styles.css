@@ -196,6 +196,13 @@ h4,h5, h6{
 
 }
 
+/*Contenido*/
+.card{
+    margin: 5px;
+}
+
+
+
 /*Pie de pagina*/
 
 .icons{

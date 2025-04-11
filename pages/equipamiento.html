@@ -55,16 +55,12 @@
     </section>
     <section class="container">
         <div class="row no-gutters">
-            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4 border border-primary">
+            <!--filters-->
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
                 <div class="row">
                     <div class="col-sm-12 col-md-4 col-lg-4">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <h4>Equipamiento</h4>
-                        <ul>
+                        <h5>Equipamiento</h5>
+                        <ul class="filters-category">
                             <li><a href="" title="Ruedas">Ruedas</a></li>
                             <li><a href="" title="Pedales">Pedales</a></li>
                             <li><a href="" title="Asientos">Asientos</a></li>
@@ -75,18 +71,22 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-4 col-lg-4">
-                        <h4>Precio</h4>
-                        <form action="">
-                            <div>
+                        <h5>Precio</h5>
+                        <form class="container" action="">
+                            <div class="filter-value">
                                 <label for="Desde">Desde</label>
-                                <input type="number" id="" name="" value="Desde">
+                                <input type="number" id="" name="" value=""  maxlength="7">
                             </div>
-                            <div>
+                            <div class="filter-value">
                                 <label for="Hasta">Hasta</label>
-                                <input type="number" id="" name="" value="Hasta">
-                            </div>
-                            <div>
-                                <input type="button" value="">
+                                <input type="number" id="" name="" value="" placeholder="$0">
+                                <button class="bi bi-caret-right-fill">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -139,7 +139,7 @@
                 <li><a href=""><img class="icons" src="../img/icons/facebook.png" alt=""></a></li>
                 <li><a href=""><img class="icons" src="../img/icons/whatsapp.png" alt=""></a></li>
             </ul>
-            <h4>Copyright Caleta Bike Shop</h4>
+            <h6>Copyright Caleta Bike Shop</h6>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
