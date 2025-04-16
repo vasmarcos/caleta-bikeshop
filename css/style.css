@@ -201,10 +201,44 @@ h4,h5, h6{
     margin: 5px;
 }
 
-.card-body{
+.card h5{
+    font-family: "Nunito Sans", sans-serif; 
+    color: var(--fontColorFotter);
+    font-weight: bold;
+}
+
+.card h6{
+    font-family: "Nunito Sans", sans-serif; 
     text-align: center;
 }
 
+.card-body span{
+    font-family: "Nunito Sans", sans-serif; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--fontColorFotter);
+    font-size: medium;
+}
+
+.card-background-basico{
+    background-image: url(../img/background/tarjetas/basico.jpeg);
+    padding: 10px;
+    height: 80%;
+}
+
+.card-background-medium{
+    background-image: url(../img/background/tarjetas/medium.jpeg);
+    padding: 10px;
+    height: 80%;
+}
+
+.card-background-premium{
+    background-image: url(../img/background/tarjetas/premium.jpeg);
+    padding: 10px;
+    height: 80%;
+}
 /*Pie de pagina*/
 
 .icons{
