@@ -161,6 +161,12 @@ h4,h5, h6{
 }
 
 /*Filtros*/
+
+#section-filters{
+    background-color: #5c626712;
+    padding: 5px; 
+}
+
 .filters-category{
     list-style-type: none;
 }
@@ -168,6 +174,7 @@ h4,h5, h6{
 .filters-category a{
     font-family: "Nunito Sans", sans-serif; 
     font-size: medium;
+    padding-left: 15px;
     color: var(--fontColor);
 }
 
@@ -189,7 +196,7 @@ h4,h5, h6{
     margin: 5px;
 }
 
-.filter-value button{
+.filter-button{
     border-radius:10px;
     background-color: #feed00;
     text-align: center;
@@ -217,7 +224,6 @@ h4,h5, h6{
     text-align: center;
     display: flex;
     align-items: center;
-    text-align: center;
     color: var(--fontColorFotter);
     font-size: medium;
 }
@@ -225,19 +231,16 @@ h4,h5, h6{
 .card-background-basico{
     background-image: url(../img/background/tarjetas/basico.jpeg);
     padding: 10px;
-    height: 80%;
 }
 
 .card-background-medium{
     background-image: url(../img/background/tarjetas/medium.jpeg);
     padding: 10px;
-    height: 80%;
 }
 
 .card-background-premium{
     background-image: url(../img/background/tarjetas/premium.jpeg);
     padding: 10px;
-    height: 80%;
 }
 /*Pie de pagina*/
 
