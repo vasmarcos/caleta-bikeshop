@@ -84,30 +84,29 @@
             <h5 class="text-center">O envianos un mensaje</h5>
             <form action="">
                 <!--Col1-->
-                <div class="row formulario_contacto">
-                    <div class="formulario_contacto_container">
-                        <div class="col-12 col-md-6 mb-3 form-wrapper">
-                            <div class="mb-3">
-                                <input type="text" name="nombre" id="" class="form-control" placeholder="Ingrese su nombre">
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" name="apellido" id="" class="form-control" placeholder="Ingrese su apellido">
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" name="telefono" id="" class="form-control" placeholder="Ingrese su telefono">
-                            </div>
-                        </div>
-                        <!--Col2-->
-                        <div class="col-12 col-md-6 mb-3 formulario_contacto_col2">
-                            <div class="mb-3">
-                                <textarea name="mensaje" id="" class="form-control">Escribe un mensaje</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <input type="button" value="Enviar">
-                            </div>
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8">
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" name="nombre" class="form-control" placeholder="Ingrese su nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" name="apellido" class="form-control" placeholder="Ingrese su apellido" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" name="telefono" class="form-control" placeholder="Ingrese su teléfono" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="mensaje" class="form-control" rows="5" placeholder="Escribe un mensaje" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div> 
+                </div>
             </form>
         </div>
     </section> 
