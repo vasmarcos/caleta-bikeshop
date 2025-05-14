@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caleta Bike Shop</title>
+    <!-- SEO Tags -->
+    <meta name="description" content="Caleta Bike Shop ofrece bicicletas MTB, urbanas, eléctricas, ropa ciclista y equipamiento de alta calidad. Visítanos y conoce nuestros servicios.">
+    <meta name="keywords" content="bicicletas, MTB, bicicletas eléctricas, ropa ciclista, equipamiento ciclismo, taller bicicletas, Caleta Bike Shop">
+    <meta name="author" content="Vasquez Marcos">
+    <meta name="robots" content="index, follow">
+    <title>Caleta Bike Shop | Bicicletas, Equipamiento y Taller Ciclista</title>
+    <link rel="icon" href="../img/icons/icons.png" type="image/x-icon">
     <!--CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style/css/style.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +35,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link menu-item" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link active menu-item" aria-current="page" href="./bicis.html">Bicis</a>
                         </li>
@@ -57,120 +66,134 @@
     </section>
     <section class="container">
         <div class="row no-gutters">
-            <!--filters-->
-            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <h5>Bicicletas</h5>
-                        <ul class="filters-category">
-                            <li><a href="" title="MTB">MTB</a></li>
-                            <li><a href="" title="Ruta">Ruta</a></li>
-                            <li><a href="" title="E-bike">E-bike</a></li>
-                            <li><a href="" title="Urbanas">Urbanas</a></li>
-                        </ul>
+            <!-- Filtros --> 
+            <div id="section-filters" class="col-12 col-sm-4">
+                <div class="mb-3">
+                    <h5>Bicicletas</h5>
+                    <ul class="list-unstyled filters-category">
+                        <li><a href="#section-productos" title="MTB">MTB</a></li>
+                        <li><a href="#section-productos" title="Ruta">Ruta</a></li>
+                        <li><a href="#section-productos" title="E-bike">E-bike</a></li>
+                        <li><a href="#section-productos" title="Urbanas">Urbanas</a></li>
+                    </ul>
+                </div>
+                <div class="mb-3">
+                    <h5>Talle</h5>
+                    <div class="form-check filters-talle">
+                        <input type="checkbox" class="form-check-input" id="Talle_S" value="Talle_S">
+                        <label class="form-check-label" for="Talle_S">S</label>
+                    </div>
+                    <div class="form-check filters-talle">
+                        <input type="checkbox" class="form-check-input" id="Talle_M" value="Talle_M">
+                        <label class="form-check-label" for="Talle_M">M</label>
+                    </div>
+                    <div class="form-check filters-talle">
+                        <input type="checkbox" class="form-check-input" id="Talle_L" value="Talle_L">
+                        <label class="form-check-label" for="Talle_L">L</label>
+                    </div>
+                    <div class="form-check filters-talle">
+                        <input type="checkbox" class="form-check-input" id="Talle_XL" value="Talle_XL">
+                        <label class="form-check-label" for="Talle_XL">XL</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <h5>Talle</h5>
-                        <div class="filters-talle">
-                            <input type="checkbox" id="" name="" value="Talle_S">
-                            <label for="Talle_S">S</label>
-                        </div>
-                        <div class="filters-talle">
-                            <input type="checkbox" id="" name="" value="Talle_M">
-                            <label for="Talle_M">M</label>
-                        </div>
-                        <div class="filters-talle">
-                            <input type="checkbox" id="" name="" value="Talle_L">
-                            <label for="Talle_L">L</label>
-                        </div>
-                        <div class="filters-talle">
-                            <input type="checkbox" id="" name="" value="Talle_XL">
-                            <label for="Talle_XL">XL</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <h5>Precio</h5>
-                        <form class="container" action="">
-                            <div class="col-xs-12 col-sm-6 filter-value">
+                <div class="mb-3">
+                    <h5>Precio</h5>
+                    <form class="filter-precio">
+                        <div class="row">
+                            <div class="col-6">
                                 <label for="Desde">Desde</label>
-                                <input type="number" id="" name="" value=""  maxlength="7">
+                                <input type="number" class="form-control" id="Desde" name="Desde" placeholder="$0" maxlength="7">
                             </div>
-                            <div class="col-xs-12 col-sm-6 filter-value">
+                            <div class="col-6">
                                 <label for="Hasta">Hasta</label>
-                                <input type="number" id="" name="" value="" placeholder="$0">
-                                <button class="bi bi-caret-right-fill">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                    </svg>
-                                </button>
+                                <input type="number"class="form-control" id="Hasta" name="Hasta" placeholder="$0" maxlength="7"> 
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <button class="btn btn-warning mt-3 w-100 d-flex justify-content-center align-items-center filter-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8">
+            </div> 
+            <div id="section-productos" class="col-12 col-sm-8">
                 <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-02.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-03.jpg" class="card-img-top" alt="...">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-02.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-03.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-02.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div class="card">
-                            <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-03.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h6>Scott Scale RC</h6>
-                                <h6>$150000</h6>
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
                             </div>
-                        </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-01.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-02.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card"> <img src="../img/page-bicis/bici-03.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">Scott Scale RC</h6>
+                                <h6 class="card-subtitle">$150000</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

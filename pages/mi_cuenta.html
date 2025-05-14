@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caleta Bike Shop</title>
-    <!--CSS-->  
+    <!-- SEO Tags -->
+    <meta name="description" content="Caleta Bike Shop ofrece bicicletas MTB, urbanas, eléctricas, ropa ciclista y equipamiento de alta calidad. Visítanos y conoce nuestros servicios.">
+    <meta name="keywords" content="bicicletas, MTB, bicicletas eléctricas, ropa ciclista, equipamiento ciclismo, taller bicicletas, Caleta Bike Shop">
+    <meta name="author" content="Vasquez Marcos">
+    <meta name="robots" content="index, follow">
+    <title>Caleta Bike Shop | Bicicletas, Equipamiento y Taller Ciclista</title>
+    <link rel="icon" href="../img/icons/icons.png" type="image/x-icon">
+    <!--CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style/css/style.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +35,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link menu-item" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link menu-item" aria-current="page" href="./bicis.html">Bicis</a>
                         </li>
@@ -53,23 +62,42 @@
      </header>
     <!--Slidebar--> 
     <section>
-
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="card" style="width: 100%; max-width: 400px;">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Iniciar sesión</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Recordarme</label>
+                            </div>
+                            <a href="#" class="small">¿Olvidaste la contraseña?</a>
+                        </div>
+                        <button type="submit" class="btn btn-warning mt-3 w-100 d-flex justify-content-center align-items-center filter-button w-100">Iniciar sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-
-        <h1>Encabezado</h1>
-        <h3>Este va ser el titulo del sitio web</h3>
-        <button></button>
-        <img src="" alt="">
     <!--Pie de pagina--> 
     <footer>
         <!--Iconos redes sociales-->
-        <div class="containerFooter">
+        <div class="containerFooter container">
             <ul>
                 <li><a href=""><img class="icons" src="../img/icons/instagram.png" alt=""></a></li>
                 <li><a href=""><img class="icons" src="../img/icons/facebook.png" alt=""></a></li>
                 <li><a href=""><img class="icons" src="../img/icons/whatsapp.png" alt=""></a></li>
             </ul>
-            <h4>Copyright Caleta Bike Shop</h4>
+            <h6>Copyright Caleta Bike Shop</h6>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

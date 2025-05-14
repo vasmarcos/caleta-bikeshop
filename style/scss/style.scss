@@ -1,3 +1,13 @@
+// 🎨 Paleta de colores
+$amarillo: #fdd000;
+$gris: #e5e5e5;
+$negro: #000000;
+
+$font-title: #feed00;
+$font-color: #0d0f05;
+$font-color-footer: #e5e5e5;
+
+//Selectores globales
 * {
   padding: 0px;
   margin: 0px;
@@ -9,10 +19,12 @@ a {
   font-size: 20px;
 }
 
+//Body
 body {
   min-height: 100vh;
 }
 
+// Header
 header {
   justify-content: space-between;
   align-items: center;
@@ -21,54 +33,64 @@ header {
 }
 
 .menu-item {
-  color: #feed00;
+  color: $font-title;
 }
 
 .btn-cuenta {
-  background-color: #feed00;
+  background-color: $font-title;
   font-family: "Nunito Sans", sans-serif;
   font-size: medium;
-  color: #0d0f05;
+  color: $font-color;
   display: flex;
   align-content: flex-end;
   padding: 4px;
   border-radius: 10px;
 }
 
+//Slidebar
 .slidebar {
   position: relative;
   width: 100%;
-}
-.slidebar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-}
-nav ul li {
-  display: inline;
-  text-align: center;
-  margin: 0 5px;
-}
-nav ul li a {
-  color: #feed00;
+
+//Navegación
+nav {
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    li {
+      display: inline;
+      text-align: center;
+      margin: 0 5px;
+
+      a {
+        color: $font-title;
+      }
+    }
+  }
 }
 
+//Tipografia del contenido
 h4, h5, h6 {
   font-family: "Nunito Sans", sans-serif;
 }
 
+// Secciones con fondo
 #bicis, #indumentaria, #equipamiento, #servicios {
   min-height: 256px;
   min-width: 256px;
   background-size: cover;
   text-align: center;
-  color: #feed00;
+  color: $font-title;
   align-content: center;
   background-position: center;
 }
@@ -76,15 +98,12 @@ h4, h5, h6 {
 #bicis {
   background-image: url("../../img/background/bicis.jpg");
 }
-
 #indumentaria {
   background-image: url("../../img/background/indumentariaa.jpg");
 }
-
 #equipamiento {
   background-image: url("../../img/background/equipamiento.png");
 }
-
 #servicios {
   background-image: url("../../img/background/servicios.png");
 }
@@ -94,7 +113,7 @@ h4, h5, h6 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: #e5e5e5;
+  color: $font-color-footer;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -105,6 +124,7 @@ iframe {
   width: 100%;
 }
 
+// Formulario de contacto
 .icons_form__contacto {
   width: 60px;
   height: 80px;
@@ -117,29 +137,22 @@ iframe {
 }
 
 .social-icon {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-.social-icon:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.social-icon:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.social-icon:nth-child(3) {
-  animation-delay: 0.5s;
-}
+.social-icon:nth-child(1) { animation-delay: 0.3s; }
+.social-icon:nth-child(2) { animation-delay: 0.4s; }
+.social-icon:nth-child(3) { animation-delay: 0.5s; }
 
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 .formulario_contacto {
   display: flex;
 }
@@ -154,11 +167,14 @@ iframe {
   justify-content: center;
 }
 
+// 📱 Responsive
 @media (max-width: 767px) {
   .equal-cols {
     flex-direction: column;
   }
 }
+
+// Filtros
 #section-filters {
   background-color: rgba(92, 98, 103, 0.07);
   padding: 5px;
@@ -166,12 +182,13 @@ iframe {
 
 .filters-category {
   list-style-type: none;
-}
-.filters-category a {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: medium;
-  padding-left: 15px;
-  color: #0d0f05;
+
+  a {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: medium;
+    padding-left: 15px;
+    color: $font-color;
+  }
 }
 
 .filters-talle {
@@ -180,8 +197,8 @@ iframe {
   padding-left: 30px;
 }
 
-.filter-precio {
-  padding: 8px;
+.filter-precio{
+    padding: 8px;
 }
 
 .filter-value {
@@ -189,44 +206,50 @@ iframe {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-}
-.filter-value input {
-  margin: 5px;
+
+  input {
+    margin: 5px;
+  }
 }
 
 .filter-button {
   border-radius: 10px;
-  background-color: #feed00;
+  background-color: $font-title;
   text-align: center;
   font-weight: 500;
   padding: 10px 16px;
   font-size: 16px;
 }
 
+// Tarjetas
 .card {
   border-radius: 10px;
   transition: transform 0.3s ease;
   margin: 5px;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-.card h5 {
-  font-family: "Nunito Sans", sans-serif;
-  color: #e5e5e5;
-  font-weight: bold;
-}
-.card h6 {
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-}
-.card .card-body span {
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  color: #e5e5e5;
-  font-size: medium;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h5 {
+    font-family: "Nunito Sans", sans-serif;
+    color: $font-color-footer;
+    font-weight: bold;
+  }
+
+  h6 {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+  }
+
+  .card-body span {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: $font-color-footer;
+    font-size: medium;
+  }
 }
 
 .card-background-basico {
@@ -244,6 +267,7 @@ iframe {
   padding: 10px;
 }
 
+// 🦶 Footer
 .icons {
   top: 0;
   height: 60px;
@@ -252,7 +276,7 @@ iframe {
 footer {
   background-color: rgba(0, 0, 0, 0.79);
   text-align: center;
-  color: #e5e5e5;
+  color: $font-color-footer;
   display: flex;
 }
 
@@ -263,19 +287,21 @@ footer {
   padding-top: 4px;
 }
 
-.containerFooter ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.containerFooter ul li {
-  list-style-type: none;
-  padding: 5px;
-}
-.containerFooter h6 {
-  padding-bottom: 10px;
-  color: #feed00;
-  padding-left: 25px;
-}
+.containerFooter {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-/*# sourceMappingURL=style.css.map */
+    li {
+      list-style-type: none;
+      padding: 5px;
+    }
+  }
+
+  h6 {
+    padding-bottom: 10px;
+    color: $font-title;
+    padding-left: 25px;
+  }
+}
