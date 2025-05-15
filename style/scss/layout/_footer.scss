@@ -1,0 +1,40 @@
+$font-title: #feed00;
+$font-color-footer: #e5e5e5;
+
+.icons {
+  top: 0;
+  height: 60px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.79);
+  text-align: center;
+  color: $font-color-footer;
+  display: flex;
+}
+
+.footer-contactanos {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-top: 4px;
+}
+
+.containerFooter {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
+    }
+  }
+
+  h6 {
+    padding-bottom: 10px;
+    color: $font-title;
+    padding-left: 25px;
+  }
+}

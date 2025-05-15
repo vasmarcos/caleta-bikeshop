@@ -1,0 +1,25 @@
+$font-title: #feed00;
+
+
+#bicis, #indumentaria, #equipamiento, #servicios {
+  min-height: 256px;
+  min-width: 256px;
+  background-size: cover;
+  text-align: center;
+  color: $font-title;
+  align-content: center;
+  background-position: center;
+}
+
+#bicis {
+  background-image: url("../../img/background/bicis.jpg");
+}
+#indumentaria {
+  background-image: url("../../img/background/indumentariaa.jpg");
+}
+#equipamiento {
+  background-image: url("../../img/background/equipamiento.png");
+}
+#servicios {
+  background-image: url("../../img/background/servicios.png");
+}

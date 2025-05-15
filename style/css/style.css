@@ -4,58 +4,20 @@
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
   font-size: 20px;
 }
 
-body {
-  min-height: 100vh;
-}
-
-header {
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.79);
-  font-family: "Nunito Sans", sans-serif;
+iframe {
+  width: 100%;
 }
 
 .menu-item {
-  color: #feed00;
-}
-
-.btn-cuenta {
-  background-color: #feed00;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: medium;
-  color: #0d0f05;
-  display: flex;
-  align-content: flex-end;
-  padding: 4px;
-  border-radius: 10px;
-}
-
-.slidebar {
-  position: relative;
-  width: 100%;
-}
-.slidebar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-}
-nav ul li {
-  display: inline;
-  text-align: center;
-  margin: 0 5px;
-}
-nav ul li a {
   color: #feed00;
 }
 
@@ -89,8 +51,84 @@ h4, h5, h6 {
   background-image: url("../../img/background/servicios.png");
 }
 
+.icons {
+  top: 0;
+  height: 60px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.79);
+  text-align: center;
+  color: #e5e5e5;
+  display: flex;
+}
+
+.footer-contactanos {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-top: 4px;
+}
+
+.containerFooter ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerFooter ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+.containerFooter h6 {
+  padding-bottom: 10px;
+  color: #feed00;
+  padding-left: 25px;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.79);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.btn-cuenta {
+  background-color: #feed00;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: medium;
+  color: #0d0f05;
+  display: flex;
+  align-content: flex-end;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+nav ul li {
+  display: inline;
+  text-align: center;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #feed00;
+}
+
+.slidebar {
+  position: relative;
+  width: 100%;
+}
+.slidebar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #banner {
-  background-image: url("../../img/slidebar/slide-02.jpeg");
+  background-image: url("../../../img/slidebar/slide-02.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -101,8 +139,45 @@ h4, h5, h6 {
   height: 70vh;
 }
 
-iframe {
-  width: 100%;
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 5px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h5 {
+  font-family: "Nunito Sans", sans-serif;
+  color: #e5e5e5;
+  font-weight: bold;
+}
+.card h6 {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+}
+.card .card-body span {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #e5e5e5;
+  font-size: medium;
+}
+
+.card-background-basico {
+  background-image: url("../../../img/background/tarjetas/basico.jpeg");
+  padding: 10px;
+}
+
+.card-background-medium {
+  background-image: url("../../../img/background/tarjetas/medium.jpeg");
+  padding: 10px;
+}
+
+.card-background-premium {
+  background-image: url("../../../img/background/tarjetas/premium.jpeg");
+  padding: 10px;
 }
 
 .icons_form__contacto {
@@ -158,124 +233,6 @@ iframe {
   .equal-cols {
     flex-direction: column;
   }
-}
-#section-filters {
-  background-color: rgba(92, 98, 103, 0.07);
-  padding: 5px;
-}
-
-.filters-category {
-  list-style-type: none;
-}
-.filters-category a {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: medium;
-  padding-left: 15px;
-  color: #0d0f05;
-}
-
-.filters-talle {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: medium;
-  padding-left: 30px;
-}
-
-.filter-precio {
-  padding: 8px;
-}
-
-.filter-value {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.filter-value input {
-  margin: 5px;
-}
-
-.filter-button {
-  border-radius: 10px;
-  background-color: #feed00;
-  text-align: center;
-  font-weight: 500;
-  padding: 10px 16px;
-  font-size: 16px;
-}
-
-.card {
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  margin: 5px;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-.card h5 {
-  font-family: "Nunito Sans", sans-serif;
-  color: #e5e5e5;
-  font-weight: bold;
-}
-.card h6 {
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-}
-.card .card-body span {
-  font-family: "Nunito Sans", sans-serif;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  color: #e5e5e5;
-  font-size: medium;
-}
-
-.card-background-basico {
-  background-image: url("../../img/background/tarjetas/basico.jpeg");
-  padding: 10px;
-}
-
-.card-background-medium {
-  background-image: url("../../img/background/tarjetas/medium.jpeg");
-  padding: 10px;
-}
-
-.card-background-premium {
-  background-image: url("../../img/background/tarjetas/premium.jpeg");
-  padding: 10px;
-}
-
-.icons {
-  top: 0;
-  height: 60px;
-}
-
-footer {
-  background-color: rgba(0, 0, 0, 0.79);
-  text-align: center;
-  color: #e5e5e5;
-  display: flex;
-}
-
-.footer-contactanos {
-  text-align: center;
-  display: block;
-  width: 100%;
-  padding-top: 4px;
-}
-
-.containerFooter ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.containerFooter ul li {
-  list-style-type: none;
-  padding: 5px;
-}
-.containerFooter h6 {
-  padding-bottom: 10px;
-  color: #feed00;
-  padding-left: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

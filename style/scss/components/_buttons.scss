@@ -1,0 +1,13 @@
+$font-color: #0d0f05;
+$font-title: #feed00;
+
+.btn-cuenta {
+  background-color: $font-title;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: medium;
+  color: $font-color;
+  display: flex;
+  align-content: flex-end;
+  padding: 4px;
+  border-radius: 10px;
+}

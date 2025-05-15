@@ -1,0 +1,48 @@
+.icons_form__contacto {
+  width: 60px;
+  height: 80px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover .icons_form__contacto {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.social-icon {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.3s; }
+.social-icon:nth-child(2) { animation-delay: 0.4s; }
+.social-icon:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formulario_contacto {
+  display: flex;
+}
+
+.formulario_contacto_container,
+.formulario_contacto_col2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario_contacto_col2 {
+  justify-content: center;
+}
+
+// 📱 Responsive
+@media (max-width: 767px) {
+  .equal-cols {
+    flex-direction: column;
+  }
+}

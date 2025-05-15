@@ -1,0 +1,47 @@
+
+$font-color-footer: #e5e5e5;
+
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 5px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h5 {
+    font-family: "Nunito Sans", sans-serif;
+    color: $font-color-footer;
+    font-weight: bold;
+  }
+
+  h6 {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+  }
+
+  .card-body span {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: $font-color-footer;
+    font-size: medium;
+  }
+}
+
+.card-background-basico {
+  background-image: url("../../../img/background/tarjetas/basico.jpeg");
+  padding: 10px;
+}
+
+.card-background-medium {
+  background-image: url("../../../img/background/tarjetas/medium.jpeg");
+  padding: 10px;
+}
+
+.card-background-premium {
+  background-image: url("../../../img/background/tarjetas/premium.jpeg");
+  padding: 10px;
+}

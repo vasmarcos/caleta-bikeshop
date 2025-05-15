@@ -1,0 +1,25 @@
+//Selectores globales
+$font-title: #feed00;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+iframe {
+  width: 100%;
+}
+
+.menu-item {
+  color: $font-title;
+}
