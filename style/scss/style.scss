@@ -3,16 +3,19 @@
 @import "base/typography";
 @import "base/backgrounds";
 
+//Components
+@import "components/banner";
+@import "components/buttons";
+@import "components/card";
+@import "components/filters";
+@import "components/nav";
+@import "components/slidebar";
+
 //layout
 @import "layout/footer";
 @import "layout/header";
 
-//Components
-@import "components/buttons";
-@import "components/nav";
-@import "components/slidebar";
-@import "components/banner";
-@import "components/card";
+
 
 //pages
 @import "pages/contactanos";
