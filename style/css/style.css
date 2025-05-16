@@ -63,7 +63,7 @@ h4, h5, h6 {
 }
 
 #banner {
-  background-image: url("../../../img/slidebar/slide-02.jpeg");
+  background-image: url("../../img/slidebar/slide-02.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -112,17 +112,17 @@ h4, h5, h6 {
 }
 
 .card-background-basico {
-  background-image: url("../../../img/background/tarjetas/basico.jpeg");
+  background-image: url("../../img/background/tarjetas/basico.jpeg");
   padding: 10px;
 }
 
 .card-background-medium {
-  background-image: url("../../../img/background/tarjetas/medium.jpeg");
+  background-image: url("../../img/background/tarjetas/medium.jpeg");
   padding: 10px;
 }
 
 .card-background-premium {
-  background-image: url("../../../img/background/tarjetas/premium.jpeg");
+  background-image: url("../../img/background/tarjetas/premium.jpeg");
   padding: 10px;
 }
 
