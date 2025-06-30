@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Tags -->
-    <meta name="description" content="Caleta Bike Shop ofrece bicicletas MTB, urbanas, eléctricas, ropa ciclista y equipamiento de alta calidad. Visítanos y conoce nuestros servicios.">
-    <meta name="keywords" content="bicicletas, MTB, bicicletas eléctricas, ropa ciclista, equipamiento ciclismo, taller bicicletas, Caleta Bike Shop">
+    <meta name="description"
+        content="Caleta Bike Shop ofrece bicicletas MTB, urbanas, eléctricas, ropa ciclista y equipamiento de alta calidad. Visítanos y conoce nuestros servicios.">
+    <meta name="keywords"
+        content="bicicletas, MTB, bicicletas eléctricas, ropa ciclista, equipamiento ciclismo, taller bicicletas, Caleta Bike Shop">
     <meta name="author" content="Vasquez Marcos">
     <meta name="robots" content="index, follow">
     <title>Caleta Bike Shop | Bicicletas, Equipamiento y Taller Ciclista</title>
@@ -21,13 +23,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
+    <script src="../js/pages/script_mi_cuenta.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html"><img src="../img/icons/icons.png" alt="Logo Caleta Bike ShopLogo Caleta Bike Shop"></a>
+                <a class="navbar-brand" href="../index.html"><img src="../img/icons/icons.png"
+                        alt="Logo Caleta Bike ShopLogo Caleta Bike Shop"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -58,22 +62,26 @@
                 <div><a class="button btn-cuenta" href="./mi_cuenta.html">Mi cuenta</a></div>
             </div>
         </nav>
-        
-     </header>
-    <!--Slidebar--> 
+
+    </header>
+    <!--Slidebar-->
     <section>
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="card" style="width: 100%; max-width: 400px;">
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Iniciar sesión</h3>
-                    <form>
+                    <form id="id_form" onsubmit="return validarLogin()" autocomplete="off">
                         <div class="mb-3">
                             <label for="username" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario" required>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Ingrese su usuario">
+                            <div class="form-text text-danger" id="error-username" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Ingrese su contraseña">
+                            <div class="form-text text-danger" id="error-password" style="display: none;"></div>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div class="form-check">
@@ -82,20 +90,36 @@
                             </div>
                             <a href="#" class="small">¿Olvidaste la contraseña?</a>
                         </div>
-                        <button type="submit" class="btn btn-warning mt-3 w-100 d-flex justify-content-center align-items-center filter-button w-100">Iniciar sesión</button>
+                        <div id="error" class="alert alert-danger d-none"
+                            style="opacity: 0; transition: opacity 0.5s ease;">
+                            Usuario o contraseña incorrectos.
+                        </div>
+                        <div id="exito" class="alert alert-success d-none d-flex align-items-center gap-2"
+                            style="opacity: 0; transition: opacity 1s ease;">
+                            <div class="spinner-border spinner-border-sm text-light" role="status">
+                                <span class="visually-hidden">Cargando...</span>
+                            </div>
+                            Inicio de sesión exitoso. Serás redirigido a la página principal...
+                        </div>
+                        <button type="submit"
+                            class="btn btn-warning mt-3 w-100 d-flex justify-content-center align-items-center filter-button w-100">Iniciar
+                            sesión</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!--Pie de pagina--> 
+    <!--Pie de pagina-->
     <footer>
         <!--Iconos redes sociales-->
         <div class="containerFooter container">
             <ul>
-                <li><a href=""><img class="icons" src="../img/icons/instagram.png" alt="Instagram Caleta Bike Shop"></a></li>
-                <li><a href=""><img class="icons" src="../img/icons/facebook.png" alt="Facebook Caleta Bike Shop"></a></li>
-                <li><a href=""><img class="icons" src="../img/icons/whatsapp.png" alt="WhatsApp Caleta Bike Shop"></a></li>
+                <li><a href=""><img class="icons" src="../img/icons/instagram.png" alt="Instagram Caleta Bike Shop"></a>
+                </li>
+                <li><a href=""><img class="icons" src="../img/icons/facebook.png" alt="Facebook Caleta Bike Shop"></a>
+                </li>
+                <li><a href=""><img class="icons" src="../img/icons/whatsapp.png" alt="WhatsApp Caleta Bike Shop"></a>
+                </li>
             </ul>
             <h6>Copyright Caleta Bike Shop</h6>
         </div>
@@ -103,6 +127,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
