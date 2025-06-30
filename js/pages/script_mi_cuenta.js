@@ -81,11 +81,11 @@ function validarLogin() {
             errorDiv.style.opacity = 1;
         }, 100);
 
-        // Limpia campos
+        // Limpiar campos
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
 
-        // Opcional: quitar clases de validación
+        // Quitar clases de validación
         document.getElementById("username").classList.remove("is-valid", "is-invalid");
         document.getElementById("password").classList.remove("is-valid", "is-invalid");
 
@@ -93,7 +93,7 @@ function validarLogin() {
     }
 }
 
-// Al cargar la página: si hay usuario guardado, lo insertamos
+// Al cargar la página: si hay usuario guardado.
 window.addEventListener("DOMContentLoaded", () => {
     const usuarioGuardado = localStorage.getItem("usuarioRecordado");
     if (usuarioGuardado) {
