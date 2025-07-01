@@ -70,16 +70,27 @@ function validarFormulario() {
     errorDiv.classList.add("d-none");
     exitoDiv.classList.remove("d-none");
 
+    // limpiar el formulario a los 5 segundos
     setTimeout(() => {
+      // Reiniciamos el formulario
       document.getElementById("form").reset();
-      ["nombre", "apellido", "telefono", "mensaje"].forEach(id => {
-        document.getElementById(id).classList.remove("is-valid");
-      });
+
+      // Quitamos la clase 'is-valid' de cada campo
+      const campos = ["nombre", "apellido", "telefono", "mensaje"];
+      for (const id of campos) {
+        const campo = document.getElementById(id);
+        if (campo) {
+          campo.classList.remove("is-valid");
+        }
+      }
+
+      // Se oculta el mensaje de éxito
       exitoDiv.classList.add("d-none");
     }, 2500);
 
     return false;
   } else {
+    // Tirar mensaje de error si alguna validación falla
     errorDiv.classList.remove("d-none");
     exitoDiv.classList.add("d-none");
     return false;
