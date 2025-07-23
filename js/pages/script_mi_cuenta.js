@@ -1,104 +1,69 @@
-function mostrarError(idCampo, mensaje) {
-    const campo = document.getElementById(idCampo);
-    const error = document.getElementById("error-" + idCampo);
-    campo.classList.add("is-invalid");
-    campo.classList.remove("is-valid");
-    error.textContent = mensaje;
-    error.style.display = "block";
+// Simulación de usuarios como si fuera una API
+const usuariosAPI = [
+  { id: 1, username: "admin", password: "12345678", nombre: "Administrador", email: "admin@ejemplo.com" },
+  { id: 2, username: "marcos@user", password: "clave123", nombre: "Marcos Vásquez", email: "marcosVasquez@email.com" },
+  { id: 3, username: "juan@user", password: "juan123", nombre: "Juan Perez", email: "juanPerez@email.com" },
+  { id: 4, username: "soledad@user", password: "soledad123", nombre: "Soledad Aguilar", email: "soledadAguilar@email.com" }
+];
+
+function simularFetchUsuarios(username, password) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const usuario = usuariosAPI.find(u => u.username === username && u.password === password);
+      resolve(usuario || null);
+    }, 500);
+  });
 }
 
-function limpiarError(idCampo) {
-    const campo = document.getElementById(idCampo);
-    const error = document.getElementById("error-" + idCampo);
-    campo.classList.remove("is-invalid");
-    campo.classList.add("is-valid");
-    error.style.display = "none";
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("id_form");
+  const usernameInput = document.getElementById("username");
+  const rememberMeCheckbox = document.getElementById("rememberMe");
 
-function validacion(campo) {
-    const valor = document.getElementById(campo).value.trim();
+  // Cargar usuario recordado si existe
+  const recordado = localStorage.getItem("usuarioRecordado");
+  if (recordado) {
+    usernameInput.value = recordado;
+    rememberMeCheckbox.checked = true;
+  }
 
-    if (valor === "") {
-        mostrarError(campo, "Este campo es obligatorio.");
-        return false;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+
+    const username = usernameInput.value.trim();
+    const password = document.getElementById("password").value.trim();
+    const recordar = rememberMeCheckbox.checked;
+
+    if (!username || !password) {
+      Swal.fire("Error", "Todos los campos son obligatorios", "error");
+      return;
     }
 
-    if (campo === "password" && (valor.length < 8 || valor.length > 15)) {
-        mostrarError(campo, "La contraseña debe tener entre 8 y 15 caracteres.");
-        return false;
-    }
+    const usuario = await simularFetchUsuarios(username, password);
 
-    limpiarError(campo);
-    return true;
-}
-
-function validarLogin() {
-    const usuarioValido = validacion("username");
-    const contraseñaValida = validacion("password");
-    const errorDiv = document.getElementById("error");
-    const exitoDiv = document.getElementById("exito");
-
-    if (!usuarioValido || !contraseñaValida) {
-        exitoDiv.classList.add("d-none");
-        errorDiv.classList.remove("d-none");
-        setTimeout(() => {
-            errorDiv.style.opacity = 1;
-        }, 100);
-        return false;
-    }
-
-    const usuario = document.getElementById("username").value.trim();
-    const contraseña = document.getElementById("password").value.trim();
-    const recordar = document.getElementById("rememberMe").checked;
-
-    // Guardar o limpiar usuario en localStorage
-    if (recordar) {
-        localStorage.setItem("usuarioRecordado", usuario);
-    } else {
+    if (usuario) {
+      if (recordar) {
+        localStorage.setItem("usuarioRecordado", username);
+      } else {
         localStorage.removeItem("usuarioRecordado");
-    }
+      }
 
-    if (usuario === "admin" && contraseña === "12345678") {
-        errorDiv.classList.add("d-none");
+      localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
 
-        // Mostrar mensaje de éxito con fade-in
-        exitoDiv.classList.remove("d-none");
-        setTimeout(() => {
-            exitoDiv.style.opacity = 1;
-        }, 100);
+      Swal.fire({
+        icon: "success",
+        title: `¡Bienvenido ${usuario.nombre}!`,
+        text: "Redirigiendo al sitio...",
+        timer: 3000,
+        showConfirmButton: false
+      });
 
-        // Redirigir después de 3 segundos
-        setTimeout(() => {
-            window.location.href = "../index.html";
-        }, 3000);
+      setTimeout(() => {
+        window.location.href = "../index.html";
+      }, 3000);
 
-        return false;
     } else {
-        // Mostrar error y limpiar campos
-        exitoDiv.classList.add("d-none");
-        errorDiv.classList.remove("d-none");
-        setTimeout(() => {
-            errorDiv.style.opacity = 1;
-        }, 100);
-
-        // Limpiar campos
-        document.getElementById("username").value = "";
-        document.getElementById("password").value = "";
-
-        // Quitar clases de validación
-        document.getElementById("username").classList.remove("is-valid", "is-invalid");
-        document.getElementById("password").classList.remove("is-valid", "is-invalid");
-
-        return false;
+      Swal.fire("Error", "Usuario o contraseña incorrectos", "error");
     }
-    
-}
-
-// Al cargar la página: si hay usuario guardado.
-window.addEventListener("DOMContentLoaded", () => {
-    const usuarioGuardado = localStorage.getItem("usuarioRecordado");
-    if (usuarioGuardado) {
-        document.getElementById("username").value = usuarioGuardado;
-        document.getElementById("rememberMe").checked = true;
-    }
+  });
 });

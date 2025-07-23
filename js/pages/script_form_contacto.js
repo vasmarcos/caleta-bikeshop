@@ -63,19 +63,19 @@ function validarFormulario() {
   const telefonoValido = validarTelefono("telefono");
   const mensajeValido = validarMensaje("mensaje");
 
-  const errorDiv = document.getElementById("error");
-  const exitoDiv = document.getElementById("exito");
-
   if (nombreValido && apellidoValido && telefonoValido && mensajeValido) {
-    errorDiv.classList.add("d-none");
-    exitoDiv.classList.remove("d-none");
+    // Mostrar alerta de éxito con SweetAlert2
+    Swal.fire({
+      icon: 'success',
+      text: '¡A la brevedad nos estaremos contactando!',
+      showConfirmButton: false,
+      timer: 2000
+    });
 
-    // limpiar el formulario a los 5 segundos
+    // limpiar el formulario a los 2.5 segundos
     setTimeout(() => {
-      // Reiniciamos el formulario
       document.getElementById("form").reset();
 
-      // Quitamos la clase 'is-valid' de cada campo
       const campos = ["nombre", "apellido", "telefono", "mensaje"];
       for (const id of campos) {
         const campo = document.getElementById(id);
@@ -83,16 +83,18 @@ function validarFormulario() {
           campo.classList.remove("is-valid");
         }
       }
-
-      // Se oculta el mensaje de éxito
-      exitoDiv.classList.add("d-none");
     }, 2500);
 
     return false;
   } else {
-    // Tirar mensaje de error si alguna validación falla
-    errorDiv.classList.remove("d-none");
-    exitoDiv.classList.add("d-none");
+    // Mostrar alerta de error con SweetAlert2
+    Swal.fire({
+      icon: 'error',
+      title: 'Campos incompletos',
+      text: 'Por favor, completá todos los campos correctamente.',
+      confirmButtonColor: '#d33'
+    });
+
     return false;
   }
 }
