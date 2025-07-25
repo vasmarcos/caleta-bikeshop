@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuCuentaWrapper = document.getElementById('menu-cuenta-wrapper');
   const nombreUsuario = localStorage.getItem('nombreUsuario');
 
-  if (menuCuenta && nombreUsuario) {
-    menuCuenta.textContent = nombreUsuario;
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
+  if (menuCuenta && usuario) {
+    menuCuenta.textContent = usuario.nombre;
   } else if (menuCuentaWrapper) {
-    menuCuentaWrapper.remove();
+    menuCuentaWrapper.remove(); // Oculta el bloque si no hay usuario
   }
 
   const btnCerrarSesion = document.getElementById('cerrar-sesion');
@@ -27,9 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
           localStorage.removeItem('nombreUsuario');
           localStorage.removeItem('emailUsuario');
           localStorage.removeItem('rolUsuario');
-          // Si querés limpiar todo:
-          // localStorage.clear();
-
           Swal.fire({
             title: 'Sesión cerrada',
             text: 'Tus datos han sido eliminados.',
@@ -43,4 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  
 });
+
