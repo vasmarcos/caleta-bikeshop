@@ -61,7 +61,15 @@
                         </li>
                     </ul>
                 </div>
-                <div><a class="button btn-cuenta" href="./mi_cuenta.html">Mi cuenta</a></div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="menuCuenta"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi cuenta
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuCuenta">
+                        <li><a class="dropdown-item text-danger" href="#" id="cerrar-sesion">Cerrar sesión</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -108,12 +116,12 @@
                     
                 </tbody>
                 <tfoot>
-                    <tr>
+                    <tr class="text-end">
                         <th class="text-center" colspan="4">Total</th>
-                        <td id="tabla-total">$0</td>
+                        <td id="tabla-total" class="4">$0</td>
                     </tr>
-                    <tr class="align-items-center">
-                        <th class="" colspan="0"><button id="btn-vaciar-carrito" class="btn btn-danger">Vaciar carrito</button></th> 
+                    <tr class="text-end">
+                        <th class="" colspan="4"><button id="btn-vaciar-carrito" class="btn btn-danger">Vaciar carrito</button></th> 
                         <th class="" colspan="4"><button id="btn-confirmar-carrito" class="btn btn-success">Comprar</button></th> 
                     </tr>
                 </tfoot>

@@ -1,12 +1,46 @@
-window.addEventListener("DOMContentLoaded", () => {
-    const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-    const btnCuenta = document.getElementById("btn-mi-cuenta");
-    const nombreSpan = document.getElementById("nombre-usuario");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuCuenta = document.getElementById('menuCuenta');
+  const menuCuentaWrapper = document.getElementById('menu-cuenta-wrapper');
+  const nombreUsuario = localStorage.getItem('nombreUsuario');
 
-    if (usuario) {
-      if (btnCuenta) btnCuenta.classList.remove("d-none");
-      if (nombreSpan) nombreSpan.textContent = usuario.nombre.split(" ")[0]; // solo el primer nombre
-    } else {
-      if (btnCuenta) btnCuenta.classList.add("d-none");
-    }
-  });
+  if (menuCuenta && nombreUsuario) {
+    menuCuenta.textContent = nombreUsuario;
+  } else if (menuCuentaWrapper) {
+    menuCuentaWrapper.remove();
+  }
+
+  const btnCerrarSesion = document.getElementById('cerrar-sesion');
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      Swal.fire({
+        title: '¿Cerrar sesión?',
+        text: 'Se eliminarán los datos de usuario guardados.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cerrar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // 🔴 Borrar datos del usuario
+          localStorage.removeItem('nombreUsuario');
+          localStorage.removeItem('emailUsuario');
+          localStorage.removeItem('rolUsuario');
+          // Si querés limpiar todo:
+          // localStorage.clear();
+
+          Swal.fire({
+            title: 'Sesión cerrada',
+            text: 'Tus datos han sido eliminados.',
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false
+          }).then(() => {
+            location.href = '../pages/mi_cuenta.html';
+          });
+        }
+      });
+    });
+  }
+});
