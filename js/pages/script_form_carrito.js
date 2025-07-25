@@ -20,6 +20,7 @@ try {
   }).then(() => {
     window.location.href = "../pages/mi_cuenta.html";
   });
+}
 
 
   const Carrito = {
