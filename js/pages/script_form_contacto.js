@@ -87,7 +87,6 @@ function validarFormulario() {
 
     return false;
   } else {
-    // Mostrar alerta de error con SweetAlert2
     Swal.fire({
       icon: 'error',
       title: 'Campos incompletos',

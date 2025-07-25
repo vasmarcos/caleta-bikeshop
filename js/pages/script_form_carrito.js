@@ -38,12 +38,14 @@ try {
       this.actualizarContador?.();
     },
 
+    //Metodo para guardar los productos del carrito al  localstorage
     guardar() {
       if (this.usuario) {
         localStorage.setItem("carrito_" + this.usuario, JSON.stringify(this.productos));
       }
     },
 
+    //Metodo para agregaar un producto al carrito, teniendo en cuenta la cantidad 
     agregarProducto(producto) {
       const index = this.productos.findIndex(p => p.id === producto.id);
       if (index !== -1) {
@@ -56,24 +58,20 @@ try {
       this.actualizarContador?.();
     },
 
+    //Metodo para eliminar un producto deL carrito
     eliminarProducto(id) {
       this.productos = this.productos.filter(p => p.id !== id);
       this.guardar();
       this.renderTabla?.();
       this.actualizarContador?.();
     },
-
-    vaciarCarrito() {
-      this.productos = [];
-      this.guardar();
-      this.renderTabla?.();
-      this.actualizarContador?.();
-    },
-
+ 
+    //Metodo para obtener los totales por productos.
     obtenerTotal() {
-      return this.productos.reduce((acc, p) => acc + (p.precio * p.cantidad), 0);
+      return this.productos.reduce((acum, p) => acum + (p.precio * p.cantidad), 0);
     },
 
+    //Metodo que permite generar la tablar del fomulario carrito.html recorriendo el array de productos.
     renderTabla() {
       const tbody = document.getElementById("tabla-body");
       const totalEl = document.getElementById("tabla-total");
@@ -113,10 +111,11 @@ try {
 
     actualizarContador() {
       const contador = document.getElementById("contador-carrito");
-      const total = this.productos.reduce((acc, p) => acc + p.cantidad, 0);
+      const total = this.productos.reduce((acum, p) => acum + p.cantidad, 0);
       if (contador) contador.textContent = total;
     },
 
+    //Metodo para vaciar el carrito, inicializando el array de productos en 0
     vaciarCarrito() {
       this.productos = [];
       this.guardar();

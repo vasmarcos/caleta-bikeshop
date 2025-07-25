@@ -1,4 +1,6 @@
 // Simulación de usuarios como si fuera una API
+
+//Realizando API de prueba para trabajar con usuarios
 const usuariosAPI = [
   { id: 1, username: "admin", password: "12345678", nombre: "Administrador", email: "admin@ejemplo.com" },
   { id: 2, username: "marcos@user", password: "clave123", nombre: "Marcos Vásquez", email: "marcosVasquez@email.com" },
